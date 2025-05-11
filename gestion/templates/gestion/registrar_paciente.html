@@ -1,0 +1,16 @@
+{% extends 'gestion/base.html' %}
+
+{% block contenido %}
+    <h2>Registrar Paciente</h2>
+    <form method="post">
+        {% csrf_token %}
+        {% if form.errors %}
+            <div style="color:red;">
+                <p><strong>Revisá los siguientes errores:</strong></p>
+                {{ form.errors }}
+            </div>
+        {% endif %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+{% endblock %}

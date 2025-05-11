@@ -1,0 +1,21 @@
+{% extends 'gestion/base.html' %}
+
+{% block contenido %}
+  <h2>Mis Informes Médicos</h2>
+  
+  {% if informes %}
+    <ul>
+      {% for informe in informes %}
+        <li>
+          <strong>Fecha:</strong> {{ informe.fecha }}<br>
+          <strong>Médico:</strong> {{ informe.medico.first_name }} {{ informe.medico.last_name }} ({{ informe.medico.username }})<br>
+          <strong>Descripción:</strong><br>
+          <p>{{ informe.descripcion }}</p>
+        </li>
+        <hr>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No tenés informes aún.</p>
+  {% endif %}
+{% endblock %}

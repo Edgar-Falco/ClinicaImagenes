@@ -1,0 +1,7 @@
+{% extends 'gestion/base.html' %}
+
+{% block contenido %}
+    <h2>Panel del Médico</h2>
+    <a href="{% url 'lista_turnos' %}">Ver turnos</a><br>
+    <a href="{% url 'buscar_paciente' %}">Buscar pacientes</a>
+{% endblock %}

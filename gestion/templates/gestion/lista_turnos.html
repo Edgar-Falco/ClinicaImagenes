@@ -1,0 +1,10 @@
+{% extends 'gestion/base.html' %}
+
+{% block contenido %}
+    <h2>Lista de Turnos</h2>
+    <ul>
+        {% for turno in turnos %}
+            <li>{{ turno.fecha }} - {{ turno.paciente }} - {{ turno.medico }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

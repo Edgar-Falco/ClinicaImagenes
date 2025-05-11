@@ -1,0 +1,27 @@
+{% extends 'gestion/base.html' %}
+
+{% block contenido %}
+  <h2>Buscar Paciente</h2>
+
+  <form method="post">
+    {% csrf_token %}
+    <label for="dni">Buscar por DNI:</label>
+    <input type="text" name="dni" placeholder="Ej: 12345678">
+    <button type="submit">Buscar</button>
+  </form>
+
+  <h3>Resultados:</h3>
+  <ul>
+    {% for paciente in pacientes %}
+      {% if paciente.user %}
+        <li>
+          {{ paciente.nombre }} {{ paciente.apellido }} - DNI: {{ paciente.dni }}
+          <a href="{% url 'cargar_informe' paciente.user.id %}">[Cargar Informe]</a>
+          <a href="{% url 'historia_clinica' paciente.user.id %}">Ver historia clínica</a>
+        </li>
+      {% endif %}
+    {% empty %}
+      <li>No se encontraron pacientes.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

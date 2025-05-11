@@ -1,0 +1,10 @@
+{% extends 'gestion/base.html' %}
+
+{% block contenido %}
+    <h2>Registrar Turno</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'gestion/base.html' %}
+
+{% block contenido %}
+    <h2>Bienvenido a la Clínica de Diagnóstico por Imágenes</h2>
+    {% if rol == 'medico' %}
+        <a href="{% url 'panel_medico' %}">Ir al panel de médico</a>
+    {% elif rol == 'secretaria' %}
+        <a href="{% url 'panel_secretaria' %}">Ir al panel de secretaria</a>
+    {% elif rol == 'paciente' %}
+        <a href="{% url 'panel_paciente' %}">Ir al panel de paciente</a>
+    {% else %}
+        <p>No tiene rol asignado.</p>
+    {% endif %}
+{% endblock %}

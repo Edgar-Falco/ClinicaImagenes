@@ -1,0 +1,10 @@
+{% extends 'gestion/base.html' %}
+
+{% block contenido %}
+    <h2>Lista de Pacientes</h2>
+    <ul>
+        {% for paciente in pacientes %}
+            <li>{{ paciente.nombre }} {{ paciente.apellido }} - DNI: {{ paciente.dni }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

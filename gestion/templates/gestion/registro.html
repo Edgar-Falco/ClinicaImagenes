@@ -1,0 +1,10 @@
+{% extends 'gestion/base.html' %}
+
+{% block contenido %}
+    <h2>Registrar Usuario</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Registrarse</button>
+    </form>
+{% endblock %}

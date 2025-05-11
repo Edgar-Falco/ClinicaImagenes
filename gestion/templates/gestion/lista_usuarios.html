@@ -1,0 +1,11 @@
+{% extends 'gestion/base.html' %}
+{% block content %}
+<h2>Lista de Usuarios</h2>
+<ul>
+    {% for perfil in perfiles %}
+        <li>{{ perfil.user.username }} - Rol: {{ perfil.rol }}</li>
+    {% empty %}
+        <li>No hay usuarios registrados.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

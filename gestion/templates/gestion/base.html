@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Clínica de Imágenes</title>
+</head>
+<body>
+    <header>
+        <h1>Clínica de Diagnóstico por Imágenes</h1>
+        {% if user.is_authenticated %}
+            <p>Bienvenido, {{ user.username }} | <a href="{% url 'logout' %}">Cerrar sesión</a></p>
+        {% endif %}
+        <hr>
+    </header>
+
+    <main>
+        {% block contenido %}
+        {% endblock %}
+    </main>
+</body>
+</html>

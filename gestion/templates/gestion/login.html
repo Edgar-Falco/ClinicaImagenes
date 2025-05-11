@@ -1,0 +1,11 @@
+<!-- gestion/templates/gestion/login.html -->
+{% extends 'gestion/base.html' %}
+
+{% block contenido %}
+    <h2>Iniciar sesión</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Entrar</button>
+    </form>
+{% endblock %}
